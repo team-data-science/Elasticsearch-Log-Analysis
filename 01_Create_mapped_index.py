@@ -1,10 +1,4 @@
 from elasticsearch import Elasticsearch
-from numpy import source, take
-import pandas as pd
-from pandas import DataFrame
-import json
-import datetime as datetime
-
 
 
 es = Elasticsearch("http://localhost:9200")

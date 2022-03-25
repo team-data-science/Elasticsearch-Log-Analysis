@@ -1,10 +1,4 @@
 from elasticsearch import Elasticsearch
-from numpy import source, take
-import pandas as pd
-from pandas import DataFrame
-import json
-import datetime as datetime
-
 
 # initialize elasticsearch client
 es = Elasticsearch("http://localhost:9200")
@@ -39,8 +33,8 @@ def index_first_run():
         }
 
     # write them to the index
-    response = es.index(index = 'etl_monitoring',document = extract_json_1)
-    response = es.index(index = 'etl_monitoring',document = transform_json_1)
+    es.index(index = 'etl_monitoring',document = extract_json_1)
+    es.index(index = 'etl_monitoring',document = transform_json_1)
     response = es.index(index = 'etl_monitoring',document = load_json_1)
     print(response)
 
@@ -89,9 +83,9 @@ def index_second_run():
         }
 
     # write them to the index
-    response = es.index(index = 'etl_monitoring',document = extract_json_2)
-    response = es.index(index = 'etl_monitoring',document = transform_json_2)
-    response = es.index(index = 'etl_monitoring',document = load_json_2)
+    es.index(index = 'etl_monitoring',document = extract_json_2)
+    es.index(index = 'etl_monitoring',document = transform_json_2)
+    es.index(index = 'etl_monitoring',document = load_json_2)
     response = es.index(index = 'etl_monitoring',document = error_json_2)
     print(response)
 
