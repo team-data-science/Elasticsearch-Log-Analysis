@@ -78,7 +78,7 @@ def index_second_run():
         'date': '2022-03-02',
         'processing_time': 5,
         'records': 1,
-        'run': 1,
+        'run': 2,
         'msg' : 'this is what happened'
         }
 

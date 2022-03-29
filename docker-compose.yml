@@ -4,7 +4,7 @@ services:
 
   # Elasticsearch Docker Images: https://www.docker.elastic.co/
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.1
     container_name: elasticsearch
     environment:
       - xpack.security.enabled=false
@@ -19,14 +19,14 @@ services:
     cap_add:
       - IPC_LOCK
     volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data
+      - elasticsearch-data17:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
 
   kibana:
     container_name: kibana
-    image: docker.elastic.co/kibana/kibana:7.16.3
+    image: docker.elastic.co/kibana/kibana:7.17.1
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     ports:
