@@ -35,5 +35,5 @@ services:
       - elasticsearch
 
 volumes:
-  elasticsearch-data:
+  elasticsearch-data17:
     driver: local
